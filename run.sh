@@ -1,4 +1,11 @@
 #!/bin/bash
+
+# set the default DB_USER if it's not already set
+if [ -z "$DB_USER" ];
+then
+        DBUSER=root
+fi
+
 if [ -f /.mysql_db_created ];
 then
         exec supervisord -n
